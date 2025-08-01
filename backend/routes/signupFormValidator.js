@@ -1,5 +1,5 @@
 import {check} from "express-validator";
-
+import { validationResult } from 'express-validator';
 const signupValidation = [
   check("inputField.firstName").trim().escape().notEmpty().withMessage("First name is required!"),
   check("inputField.lastName").trim().escape().notEmpty().withMessage("Last name is required"),
@@ -12,6 +12,12 @@ const signupValidation = [
     return true;
   }),
   check("inputField.membership").escape(),
+  (req, res,next) => {
+    const errors = validationResult(req);
+    if(!errors.isEmpty())
+        return res.status(400).json({errors: errors.array()});
+    next();
+  }
 ];
 
 export default signupValidation;
