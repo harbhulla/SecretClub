@@ -14,8 +14,8 @@ A full-stack web application where users can securely register, log in, and shar
 
 🛠 Tech Stack
 
-Frontend: React, Tailwind CSS
-Backend: Node.js, Express
-Database: MongoDB (Mongoose ODM)
-Authentication: JSON Web Tokens (JWT)
+Frontend: React, Tailwind CSS<br>
+Backend: Node.js, Express<br>
+Database: PostgreSQL<br>
+Authentication: JSON Web Tokens (JWT)<br>
 Tools: Git, npm, ESLint
